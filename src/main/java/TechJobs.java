@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by LaunchCode
  */
-public class TechJobs {
+public class  TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
@@ -120,6 +120,32 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+        if(someJobs.isEmpty()){
+            System.out.print("No results");
+        }
+        else {
+//            for(HashMap<String, String> job : someJobs){
+//                System.out.println("*****");
+//                for(String element : job.keySet()){
+//                    System.out.println(element + ": " + job.get(element));
+//                }
+//                System.out.println("*****");
+//                System.out.println();
+//                //TODO get rid of the final line
+//            }
+            for(int i=0; i<someJobs.size(); i++){
+                HashMap<String, String> job = someJobs.get(i);
+
+                System.out.println("*****");
+                for(String element : job.keySet()){
+                    System.out.println(element + ": " + job.get(element));
+                }
+                System.out.println("*****");
+                if(i < someJobs.size() - 1) {
+                    System.out.println();
+                }
+                //TODO get rid of the final line
+            }
+        }
     }
 }
